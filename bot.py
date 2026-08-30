@@ -41,8 +41,8 @@ MANAGER_ROLE_ID = int(MANAGER_ROLE_ID_STR)
 
 # ── Quest Config ─────────────────────────────────────────────────────────────
 API_BASE = "https://discord.com/api/v9"
-POLL_INTERVAL = 60
-HEARTBEAT_INTERVAL = 20
+POLL_INTERVAL = 15
+HEARTBEAT_INTERVAL = 5
 AUTO_ACCEPT = True
 LOG_PROGRESS = True
 DEBUG = False
@@ -297,7 +297,7 @@ class QuestAutocompleter:
         enrolled_at_str = get_enrolled_at(quest)
         enrolled_ts = datetime.fromisoformat(enrolled_at_str.replace("Z", "+00:00")).timestamp() if enrolled_at_str else time.time()
         self.log(f"🎬 Video: {name} ({seconds_done:.0f}/{seconds_needed}s)", "info")
-        max_future = 10; speed = 7; interval = 1
+        max_future = 15; speed = 15; interval = 0.5
         while seconds_done < seconds_needed:
             if self.stop_event.is_set():
                 self.log(f"⛔ Dừng quest: {name}", "warn"); return
