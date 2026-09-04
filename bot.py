@@ -696,5 +696,5 @@ if __name__ == "__main__":
         print("⚠️ OWNER_ID chưa được cấu hình! Dùng giá trị mặc định.")
     if not MANAGER_ROLE_ID:
         print("⚠️ MANAGER_ROLE_ID chưa được cấu hình! Dùng giá trị mặc định.")
-
+    keep_alive()
     client.run(DISCORD_BOT_TOKEN)
