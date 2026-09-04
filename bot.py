@@ -8,7 +8,7 @@ Cài đặt: pip install -r requirements.txt
 Chạy ở local: Tạo file .env điền các giá trị
 Chạy trên Azure: Đặt các biến trong Azure Portal → không cần file .env
 """
-
+from keep_alive import keep_alive
 import os
 import re
 import json
